@@ -111,12 +111,12 @@ a:hover, a:active {
 .content {
   height: auto;
   float: right;
-  width: 60%;
+  width: 70%;
   margin-top: 60px;
 }
 
 .page-top {
-  width: 60%;
+  width: 70%;
   position: fixed;
   right: 0;
   z-index: 3;
@@ -134,6 +134,9 @@ a:hover, a:active {
   position: relative;
   display: initial;
   padding-right: 20px;
+}
+.page-top .nav li form {
+  display:inline-block;
 }
 .page-top .nav a {
   color: #5A5A5A;
@@ -170,7 +173,7 @@ a:hover, a:active {
 }
 
 .sidebar {
-  width: 40%;
+  width: 30%;
   -webkit-background-size: cover;
   background-size: cover;
   background-color: #fff;
@@ -229,9 +232,16 @@ a:hover, a:active {
 }
 
 .post {
-  background-color: #FFF;
-  margin: 30px;
+  /*background-color: #FFF;*/
+  padding: 30px 30px 0 30px;
+  transition: all 0.5s;
 }
+
+.post:hover {
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+  background-color: #FFF;
+}
+
 .post .post-title h1 {
   text-transform: uppercase;
   font-size: 30px;
@@ -691,5 +701,83 @@ a.btn {
 
   .share {
     display: grid;
+  }
+}
+#search-box {
+    display:inline;
+    width:200px;
+}
+.site-search-form {
+    margin-left: 5px;
+}
+.st-search-input {
+    outline: none;
+    border: 0;
+    border-bottom: 1px solid #000;
+    width:0px;
+    transition: all 0.5s;
+}
+
+#search-box:hover .st-search-input {
+    width: 100px;
+}
+
+#local-search-input:valid .st-search-input {
+    width: 100px;
+}
+
+.st-search-input:focus {
+    width: 100px;
+}
+
+.local-search-result-cls {
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+}
+
+.local-search-empty {
+}
+
+.search-keyword {
+    color: #db2828;
+}
+
+.site-author-image {
+  -webkit-transition: -webkit-transform 1.0s ease-out;
+  -moz-transition: -moz-transform 1.0s ease-out;
+  transition: transform 1.0s ease-out;
+}
+.site-author-image:hover {
+  /* 鼠标经过停止头像旋转 
+  -webkit-animation-play-state:paused;
+  animation-play-state:paused;*/
+  /* 鼠标经过头像旋转360度 */
+  -webkit-transform: rotateZ(360deg);
+  -moz-transform: rotateZ(360deg);
+  transform: rotateZ(360deg);
+}
+/* Z 轴旋转动画 */
+@-webkit-keyframes play {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(-360deg);
+  }
+}
+@-moz-keyframes play {
+  0% {
+    -moz-transform: rotateZ(0deg);
+  }
+  100% {
+    -moz-transform: rotateZ(-360deg);
+  }
+}
+@keyframes play {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(-360deg);
   }
 }
